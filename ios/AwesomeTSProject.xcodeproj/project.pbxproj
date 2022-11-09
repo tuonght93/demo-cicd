@@ -516,7 +516,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 30;
-				DEVELOPMENT_TEAM = KXJUN9HR33;
+				DEVELOPMENT_TEAM = PMB2Z4TS69;
 				INFOPLIST_FILE = AwesomeTSProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -529,7 +529,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.libertify.ios;
 				PRODUCT_NAME = AwesomeTSProject;
-				PROVISIONING_PROFILE_SPECIFIER = libertify_development;
+				PROVISIONING_PROFILE_SPECIFIER = "Sotatek Development Provisioning Profile";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
