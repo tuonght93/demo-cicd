@@ -73,4 +73,4 @@ jobs:
           appId: 1:724674160621:ios:fe7d101d046ad7a8e529e4
           token: 1//0eNLZ07b1z76cCgYIARAAGA4SNwF-L9IrQs_e1_Y4-uBSAqc7B6cubgIjKdSAp-nYfZB2CBV9J3bQvEnfRleTeZGcXPOlPObsSVY
           groups: tester
-          ipa_path: 'AwesomeTSProject.ipa',
+          ipa_path: 'AwesomeTSProject.ipa'
