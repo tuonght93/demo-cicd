@@ -9,9 +9,6 @@ jobs:
   ios-build:
     name: IOS Production Build
     runs-on: macOS-latest
-      - uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '13.4.1'
     defaults:
       run:
         working-directory: ios
@@ -67,6 +64,7 @@ jobs:
           certificate-password: 1212
           workspace-path: ios/AwesomeTSProject.xcworkspace
           scheme: AwesomeTSProject
+          build-sdk: iOS 15.5
 
       ## Distribute app to Firebase App Distribution for testing / use google play internal track if you have a google play account
       - name: upload artifact to Firebase App Distribution
