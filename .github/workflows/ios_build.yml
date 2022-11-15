@@ -17,6 +17,10 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '13.4.1'
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -69,7 +73,7 @@ jobs:
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          appId: 1:724674160621:android:74c04f028c8de491e529e4
+          appId: 1:724674160621:ios:fe7d101d046ad7a8e529e4
           token: 1//0eNLZ07b1z76cCgYIARAAGA4SNwF-L9IrQs_e1_Y4-uBSAqc7B6cubgIjKdSAp-nYfZB2CBV9J3bQvEnfRleTeZGcXPOlPObsSVY
           groups: tester
-          file: output.ipa
+          ipa_path: 'AwesomeTSProject.ipa',

@@ -1,0 +1,43 @@
+fastlane_require 'dotenv'
+
+before_all do
+  Dotenv.overload('.env')
+end
+
+# platform :android do
+#   desc "RN Production App"
+#   lane :distribute do
+#     gradle(task: 'clean assembleRelease', project_dir: './android', print_command: false, properties: {
+#       "MYAPP_UPLOAD_STORE_FILE" => ENV["MYAPP_UPLOAD_STORE_FILE"],
+#       "MYAPP_UPLOAD_STORE_PASSWORD" => ENV["MYAPP_UPLOAD_STORE_PASSWORD"],
+#       "MYAPP_UPLOAD_KEY_ALIAS" => ENV["MYAPP_UPLOAD_KEY_ALIAS"],
+#       "MYAPP_UPLOAD_KEY_PASSWORD" => ENV["MYAPP_UPLOAD_KEY_PASSWORD"]
+#     })
+#     firebase_app_distribution(
+#       app: "1:724674160621:android:74c04f028c8de491e529e4",
+#       groups: 'tester',
+#       firebase_cli_token: ENV["FIREBASE_TOKEN"],
+#       release_notes: "Lots of amazing new features to test out!"
+#     )
+#   end
+# end
+
+platform :ios do
+  desc "RN Production App"
+  lane :distribute do
+    build_app(
+      scheme: "AwesomeTSProject",
+      workspace: "ios/AwesomeTSProject.xcworkspace",
+      export_method: "development",
+    )
+
+    firebase_app_distribution(
+      app: "1:724674160621:ios:fe7d101d046ad7a8e529e4",
+      groups: 'tester',
+      firebase_cli_token: ENV["FIREBASE_TOKEN"],
+      ipa_path: 'AwesomeTSProject.ipa',
+      release_notes: "Lots of amazing new features to test out!"
+    )
+
+  end
+end
